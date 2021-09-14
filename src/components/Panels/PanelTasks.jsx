@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux"
 import {deleteTask, makeTaskActive, makeTaskInactive} from "../../redux/actions/tasks"
-import Task from "../Task/Task";
+import Task from "../Task/Task"
 
 const PanelTasks = () => {
     const dispatch = useDispatch()

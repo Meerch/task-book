@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux"
-import {engToRuDays} from "../../constants";
+import {engToRuDays} from "../../constants"
 
 const PanelObservation = () => {
 

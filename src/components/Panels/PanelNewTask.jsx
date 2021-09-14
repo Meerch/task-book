@@ -4,8 +4,6 @@ import classNames from "classnames"
 import {addTask} from "../../redux/actions/tasks"
 import {useDispatch, useSelector} from "react-redux"
 
-// Accept TODO: Добавил к категориям id
-
 const PanelNewTask = ({changeVisibilityTask}) => {
 
     const dispatch = useDispatch()

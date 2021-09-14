@@ -25,24 +25,4 @@ const Task = ({id, makeTaskThenSomething, text, deleteTask, typeTask}) => {
     )
 }
 
-// <div
-//                                     key={id}
-//                                     className="tasks__item">
-//                                     <div onClick={() => makeTaskThenActive(id)} className="tasks__item-state">
-//                                         <label className="b-contain">
-//                                             <span>{text}</span>
-//                                             <input defaultChecked={true} type="checkbox"/>
-//                                             <div className="b-input"/>
-//                                         </label>
-//                                     </div>
-//                                     <div className="tasks__item-buttons">
-//                                         <button
-//                                             onClick={() => deleteActiveTask(id, 'inactive')}
-//                                             className="tasks__item-delete">
-//                                             <img src={deleteIcon} alt="delete"/>
-//                                         </button>
-//                                     </div>
-//                                 </div>
-
-
 export default Task

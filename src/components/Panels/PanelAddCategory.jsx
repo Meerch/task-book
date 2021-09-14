@@ -1,10 +1,9 @@
 import {useState} from 'react'
 import classNames from "classnames"
 import {addCategory} from "../../redux/actions/tasks"
-import {useDispatch} from "react-redux";
-import {defaultColors} from "../../constants";
+import {useDispatch} from "react-redux"
+import {defaultColors} from "../../constants"
 
-// Accept TODO: Создал новый dispatch, а не прокидываю его
 
 const PanelAddCategory = ({closeWindow}) => {
     const [selectedColor, changeSelectedColor] = useState(0)

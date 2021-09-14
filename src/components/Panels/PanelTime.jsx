@@ -4,8 +4,6 @@ import dateIcon from '../../assets/img/icons/calendar-1.webp'
 import {format} from 'date-fns'
 import {months} from "../../constants"
 
-// Accept TODO: Сделал формат времени с помощью библеотеки date-fns
-
 const PanelTime = () => {
     const [date, changeDate] = useState({})
 

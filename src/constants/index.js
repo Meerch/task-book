@@ -1,7 +1,7 @@
-import home from "../assets/img/icons/home.webp";
-import family from "../assets/img/icons/family-3.webp";
-import work from "../assets/img/icons/work-3.webp";
-import sport from "../assets/img/icons/sport-1.webp";
+import home from "../assets/img/icons/home.webp"
+import family from "../assets/img/icons/family-3.webp"
+import work from "../assets/img/icons/work-3.webp"
+import sport from "../assets/img/icons/sport-1.webp"
 
 export const engToRuDays = {
     Monday: 'Понедельник',

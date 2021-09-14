@@ -1,5 +1,5 @@
 import {format} from "date-fns"
-import {defaultCategories} from "../../constants";
+import {defaultCategories} from "../../constants"
 
 let oldTasks, newTasks, newTaskWithId, tasksClone, deletedTask, newCategories, newCategoriesWithId
 
