@@ -1,41 +1,44 @@
-import home from '../../assets/img/icons/home.png'
-import family from '../../assets/img/icons/family-3.png'
-import work from '../../assets/img/icons/work-3.png'
-import sport from '../../assets/img/icons/sport-1.png'
+import {format} from "date-fns"
+import {defaultCategories} from "../../constants";
 
-let oldTasks, newTasks, newTaskWithId, tasksClone, deletedTask
+let oldTasks, newTasks, newTaskWithId, tasksClone, deletedTask, newCategories, newCategoriesWithId
 
-const initialState = {
+const initialState = JSON.parse(localStorage.getItem('redux-state')) || {
     tasks: {
         active: {},
         inactive: {}
     },
-    categories: [
-        {
-            name: 'Дом',
-            icon: home
-        },
-        {
-            name: 'Семья',
-            icon: family
-        },
-        {
-            name: 'Работа',
-            icon: work
-        },
-        {
-            name: 'Спорт',
-            icon: sport
-        }
-    ],
+    categories: defaultCategories,
     selectedCategory: 0,
     valuesStatistic: {
         created: 0,
         ended: 0,
         deleted: 0
     },
-    observation: {}
+    observation: {
+        created: {
+            Monday: 0,
+            Tuesday: 0,
+            Wednesday: 0,
+            Thursday: 0,
+            Friday: 0,
+            Saturday: 0,
+            Sunday: 0
+        },
+        ended: {
+            Monday: 0,
+            Tuesday: 0,
+            Wednesday: 0,
+            Thursday: 0,
+            Friday: 0,
+            Saturday: 0,
+            Sunday: 0
+        }
+    }
 }
+
+
+let nowDay = format(new Date(), 'EEEE')
 
 const tasks = (state = initialState, action) => {
     switch (action.type) {
@@ -58,13 +61,23 @@ const tasks = (state = initialState, action) => {
                 valuesStatistic: {
                     ...state.valuesStatistic,
                     created: ++state.valuesStatistic.created
+                },
+                observation: {
+                    ...state.observation,
+                    created: {
+                        ...state.observation.created,
+                        [nowDay]: ++state.observation.created[nowDay]
+                    }
                 }
             }
         case 'ADD_CATEGORY':
             const {name, color: icon} = action
+            newCategories = [...state.categories, {name, icon}]
+            newCategoriesWithId = newCategories.map(({name, icon}, id) => ({name, icon, id}))
+
             return {
                 ...state,
-                categories: [...state.categories, {name, icon}]
+                categories: newCategoriesWithId
             }
         case 'SET_ACTIVE_CATEGORY':
             return {
@@ -110,6 +123,13 @@ const tasks = (state = initialState, action) => {
                 valuesStatistic: {
                     ...state.valuesStatistic,
                     ended: ++state.valuesStatistic.ended
+                },
+                observation: {
+                    ...state.observation,
+                    ended: {
+                        ...state.observation.ended,
+                        [nowDay]: ++state.observation.ended[nowDay]
+                    }
                 }
             }
         case 'TASK_TO_ACTIVE':
@@ -144,7 +164,7 @@ const tasks = (state = initialState, action) => {
 
 function cutTask(state, action, taskState) {
     const {selectedCategory, taskId} = action
-    const indexTask = state.tasks[taskState][selectedCategory].findIndex(({id}) =>  id === taskId)
+    const indexTask = state.tasks[taskState][selectedCategory].findIndex(({id}) => id === taskId)
     const tasks = [...state.tasks[taskState][selectedCategory]]
     const deletedTask = tasks.splice(indexTask, 1)
 

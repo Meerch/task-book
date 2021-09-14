@@ -1,9 +1,12 @@
-import {createStore} from "redux";
-import rootReducer from "./reducers";
+import {applyMiddleware, compose, createStore} from "redux"
+import rootReducer from "./reducers"
+import setStorage from "./middlewares/storage"
+import devTools from "./middlewares/devTools"
+
 
 const store = createStore(
     rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    compose(applyMiddleware(setStorage), devTools)
 )
 
 export default store

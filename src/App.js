@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import {ButtonAddTask, Navigation, PanelFacts, PanelObservation, PanelTasks, PanelTime, PanelStatistic, PanelNewTask} from "./components"
 
 
