@@ -15,7 +15,6 @@ const PanelAddCategory = ({closeWindow}) => {
         closeWindow(false)
     }
 
-
     return (
         <div className="add-category">
             <textarea

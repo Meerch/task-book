@@ -10,7 +10,6 @@ const PanelTasks = () => {
         selectedCategory: tasks.selectedCategory
     }))
 
-
     const elNoTasks = (<div className="tasks__item-clear">Здесь ничего нет</div>)
 
     const deleteActiveTask = (taskId, categoryTask) => {
@@ -25,7 +24,6 @@ const PanelTasks = () => {
     const makeTaskThenActive = (taskId) => {
         dispatch(makeTaskActive(taskId, tasks.selectedCategory))
     }
-
 
     return (
         <div className="tasks panel">

@@ -1,7 +1,6 @@
 import {useState} from 'react'
 import {ButtonAddTask, Navigation, PanelFacts, PanelObservation, PanelTasks, PanelTime, PanelStatistic, PanelNewTask} from "./components"
 
-
 function App() {
     const [visibilityTask, changeVisibilityTask] = useState(false)
 

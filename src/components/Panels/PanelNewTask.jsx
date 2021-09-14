@@ -5,7 +5,6 @@ import {addTask} from "../../redux/actions/tasks"
 import {useDispatch, useSelector} from "react-redux"
 
 const PanelNewTask = ({changeVisibilityTask}) => {
-
     const dispatch = useDispatch()
     const categories = useSelector(({tasks}) => tasks.categories)
     const [selectedCategory, changeSelectedCategory] = useState(0)

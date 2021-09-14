@@ -1,4 +1,3 @@
-
 const MyComponent = () => {
     return (
         <div className="facts__panel panel">

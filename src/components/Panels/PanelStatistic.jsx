@@ -2,7 +2,6 @@ import React from 'react'
 import {useSelector} from "react-redux"
 
 const PanelStatistic = () => {
-
     const valuesStatistic = useSelector(({tasks}) => tasks.valuesStatistic)
 
     const taskStatistic = [
@@ -25,7 +24,7 @@ const PanelStatistic = () => {
             <div className="tasks-statistics__title panel__title">Успехи за неделю</div>
             <div className="tasks-statistics__items">
                 {
-                    taskStatistic && taskStatistic.map(({name= 'Что-то пошло не так', value= 0}) => (
+                    taskStatistic && taskStatistic.map(({name = 'Что-то пошло не так', value = 0}) => (
                         <div
                             key={name}
                             className="tasks-statistics__item">

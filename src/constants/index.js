@@ -38,5 +38,4 @@ export const defaultCategories = [
 
 export const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
-
 export const defaultColors = ['#ff9090', '#ff90e0', '#90a2ff', '#5ed953', '#ffd990']

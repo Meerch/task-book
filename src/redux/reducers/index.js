@@ -5,5 +5,4 @@ const rootReducer = combineReducers({
     tasks
 })
 
-
 export default rootReducer

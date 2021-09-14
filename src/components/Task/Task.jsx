@@ -1,7 +1,6 @@
 import deleteIcon from "../../assets/img/icons/delete-7.webp"
 
 const Task = ({id, makeTaskThenSomething, text, deleteTask, typeTask}) => {
-
     const defaultChecked = typeTask !== 'active'
 
     return (

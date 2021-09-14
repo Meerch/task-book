@@ -1,5 +1,3 @@
-
-
 const ButtonAddTask = ({changeVisibilityTask}) => {
     return (
         <button onClick={() => changeVisibilityTask(true)} className="panel-tasks__add-task">

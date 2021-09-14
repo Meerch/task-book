@@ -7,14 +7,11 @@ import {months} from "../../constants"
 const PanelTime = () => {
     const [date, changeDate] = useState({})
 
-
-
     setTimeout(() => {
         let [year, month, day, hour, minutes, seconds] = format(new Date(), 'yyyy-M-dd-hh-mm-ss').split('-')
         let date = {hour, minutes, seconds, day, month: months[month], year}
         changeDate(date)
     }, 1000)
-
 
     const {hour = '?', minutes = '?', seconds = '?', day = '?', month = '?', year = '?'} = date
 
